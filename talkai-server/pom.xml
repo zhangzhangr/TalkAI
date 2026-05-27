@@ -24,11 +24,7 @@
         <module>talkai-auth</module>
         <module>talkai-chat</module>
         <module>talkai-model</module>
-        <module>talkai-user</module>
-        <module>talkai-knowledge</module>
         <module>talkai-agent</module>
-        <module>talkai-search</module>
-        <module>talkai-file</module>
         <module>talkai-photo</module>
     </modules>
 

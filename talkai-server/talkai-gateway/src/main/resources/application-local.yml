@@ -21,10 +21,6 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/api/auth/**
-        - id: talkai-user
-          uri: http://localhost:8084
-          predicates:
-            - Path=/api/user/**
         - id: talkai-chat
           uri: http://localhost:8082
           predicates:
@@ -37,10 +33,6 @@ spring:
           uri: http://localhost:8086
           predicates:
             - Path=/api/agent/**
-        - id: talkai-search
-          uri: http://localhost:8087
-          predicates:
-            - Path=/api/search/**
         - id: talkai-photo
           uri: http://localhost:8089
           predicates:

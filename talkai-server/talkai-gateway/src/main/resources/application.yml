@@ -16,11 +16,6 @@ spring:
           uri: lb://talkai-auth
           predicates:
             - Path=/api/auth/**
-        # User service
-        - id: talkai-user
-          uri: lb://talkai-user
-          predicates:
-            - Path=/api/user/**
         # Chat service
         - id: talkai-chat
           uri: lb://talkai-chat
@@ -31,26 +26,11 @@ spring:
           uri: lb://talkai-model
           predicates:
             - Path=/api/model/**
-        # Knowledge service
-        - id: talkai-knowledge
-          uri: lb://talkai-knowledge
-          predicates:
-            - Path=/api/knowledge/**
         # Agent service
         - id: talkai-agent
           uri: lb://talkai-agent
           predicates:
             - Path=/api/agent/**
-        # Search service
-        - id: talkai-search
-          uri: lb://talkai-search
-          predicates:
-            - Path=/api/search/**
-        # File service
-        - id: talkai-file
-          uri: lb://talkai-file
-          predicates:
-            - Path=/api/file/**
         # Photo restoration service
         - id: talkai-photo
           uri: lb://talkai-photo
