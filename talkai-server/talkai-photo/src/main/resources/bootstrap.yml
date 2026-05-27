@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: talkai-photo
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false

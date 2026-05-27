@@ -1,0 +1,23 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: talkai-agent
+  datasource:
+    url: jdbc:mysql://${MYSQL_ADDR:localhost:3306}/talkai?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+talkai:
+  agent:
+    mcp:
+      protocol-version: "2024-11-05"
+    tools:
+      weather:
+        api-key: ${WEATHER_API_KEY:}
+        base-url: http://wttr.in
+      search:
+        api-key: ${SEARCH_API_KEY:}
+        base-url: https://api.bing.microsoft.com/v7.0

@@ -1,0 +1,76 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: talkai-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        # Auth service
+        - id: talkai-auth
+          uri: lb://talkai-auth
+          predicates:
+            - Path=/api/auth/**
+        # User service
+        - id: talkai-user
+          uri: lb://talkai-user
+          predicates:
+            - Path=/api/user/**
+        # Chat service
+        - id: talkai-chat
+          uri: lb://talkai-chat
+          predicates:
+            - Path=/api/chat/**
+        # Model service
+        - id: talkai-model
+          uri: lb://talkai-model
+          predicates:
+            - Path=/api/model/**
+        # Knowledge service
+        - id: talkai-knowledge
+          uri: lb://talkai-knowledge
+          predicates:
+            - Path=/api/knowledge/**
+        # Agent service
+        - id: talkai-agent
+          uri: lb://talkai-agent
+          predicates:
+            - Path=/api/agent/**
+        # Search service
+        - id: talkai-search
+          uri: lb://talkai-search
+          predicates:
+            - Path=/api/search/**
+        # File service
+        - id: talkai-file
+          uri: lb://talkai-file
+          predicates:
+            - Path=/api/file/**
+        # Photo restoration service
+        - id: talkai-photo
+          uri: lb://talkai-photo
+          predicates:
+            - Path=/api/photo/**
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+            maxAge: 3600
+
+talkai:
+  jwt:
+    secret: ${JWT_SECRET:talkai-jwt-secret-key-change-in-production}
+    expiration: 86400000
+
+logging:
+  level:
+    com.talkai: debug
+    org.springframework.cloud.gateway: info

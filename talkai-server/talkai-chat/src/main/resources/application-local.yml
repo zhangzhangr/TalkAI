@@ -1,0 +1,20 @@
+spring:
+  autoconfigure:
+    exclude:
+      - com.alibaba.cloud.nacos.NacosConfigAutoConfiguration
+      - com.alibaba.cloud.nacos.NacosDiscoveryClientAutoConfiguration
+      - com.alibaba.cloud.nacos.discovery.NacosDiscoveryAutoConfiguration
+      - com.alibaba.cloud.nacos.discovery.NacosDiscoveryClientAutoConfiguration
+      - com.alibaba.cloud.nacos.NacosServiceAutoConfiguration
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false
+
+talkai:
+  model:
+    url: http://localhost:8083
+  agent:
+    url: http://localhost:8086

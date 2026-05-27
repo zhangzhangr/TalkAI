@@ -1,0 +1,28 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: talkai-photo
+  datasource:
+    url: jdbc:mysql://${MYSQL_ADDR:localhost}:${MYSQL_PORT:3306}/talkai?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:root}
+  codec:
+    max-in-memory-size: 10MB
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+
+talkai:
+  model:
+    url: ${TALKAI_MODEL_URL:http://talkai-model:8083}
+  photo:
+    python-url: ${PHOTO_PYTHON_URL:http://localhost:9000}
+    upload-dir: ${PHOTO_UPLOAD_DIR:./uploads/photo}

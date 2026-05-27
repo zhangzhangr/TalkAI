@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: talkai-model
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false

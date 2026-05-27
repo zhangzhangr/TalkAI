@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: talkai-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_ADDR:localhost:8848}
+        namespace: ${NACOS_NAMESPACE:}
+      config:
+        server-addr: ${NACOS_ADDR:localhost:8848}
+        namespace: ${NACOS_NAMESPACE:}
+        file-extension: yaml
+        shared-configs:
+          - data-id: talkai-common.yaml
+            group: DEFAULT_GROUP
+            refresh: true

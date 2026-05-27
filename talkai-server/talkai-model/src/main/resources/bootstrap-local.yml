@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+        server-addr: localhost:8848
+      config:
+        enabled: false
+        server-addr: localhost:8848

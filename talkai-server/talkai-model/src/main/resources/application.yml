@@ -1,0 +1,22 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: talkai-model
+  data:
+    redis:
+      host: ${REDIS_ADDR:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+
+# Model provider configurations (can be overridden via Nacos config)
+talkai:
+  model:
+    providers:
+      openai:
+        api-key: ${OPENAI_API_KEY:}
+        base-url: https://api.openai.com/v1
+      deepseek:
+        api-key: ${DEEPSEEK_API_KEY:}
+        base-url: https://api.deepseek.com/v1

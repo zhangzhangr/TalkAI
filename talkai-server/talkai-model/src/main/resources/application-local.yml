@@ -1,0 +1,18 @@
+spring:
+  autoconfigure:
+    exclude:
+      - com.alibaba.cloud.nacos.NacosConfigAutoConfiguration
+      - com.alibaba.cloud.nacos.NacosDiscoveryClientAutoConfiguration
+      - com.alibaba.cloud.nacos.discovery.NacosDiscoveryAutoConfiguration
+      - com.alibaba.cloud.nacos.discovery.NacosDiscoveryClientAutoConfiguration
+      - com.alibaba.cloud.nacos.NacosServiceAutoConfiguration
+      - org.springframework.cloud.nacos.discovery.NacosDiscoveryClientConfiguration
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false
+        refresh-enabled: false
+        import-check:
+          enabled: false
